@@ -2,4 +2,119 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr 1fr minmax(min-content, 1fr);
+  block-size: 100vh;
+  background-image: var(--header-bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  position: relative;
+}
+
+.rec__icon {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 38px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+}
+
+.rec__icon::after {
+  content: '';
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  position: absolute;
+  top: 8px;
+  right: -19px;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-block-start: 10px;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  color: var(--accent-color);
+  text-align: center;
+  line-height: 1.5em;
+  text-transform: lowercase;
+  padding-inline-start: 13px;
+  padding-inline-end: 13px;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-bottom: 1px solid var(--accent-color);
+  margin-block-end: -1px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid #FF007066;
+}
+
+.header_title {
+  font-weight: var(--font-weight-l);
+  font-size: var(--header-title-size);
+  color: var(--header-title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  line-height: 83%;
+  padding-block-start: 13px;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--accent-contrast-color);
+  font-weight: var(--font-weight-l);
+}
+
+.header_text {
+  block-size: fit-content;
+  white-space: pre-line;
+  margin-block-start: 43px;
+  line-height: 1.3em;
 }
