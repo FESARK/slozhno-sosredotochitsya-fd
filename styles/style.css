@@ -2,19 +2,21 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-
+  background-color: var(--main-bg-color);  /* фолбек в случае не прогрузки фоновой картинки */
+  background-image: var(--main-bg-image);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .header {
   display: grid;
-  grid-template-rows: 1fr 1fr minmax(min-content, 1fr);
+  grid-template-rows: 1fr min-content 1fr;
   block-size: 100vh;
-  background-image: var(--header-bg-image);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   padding: 10px;
   position: relative;
+  align-items: center;
 }
 
 .rec__icon {
@@ -34,7 +36,7 @@
   background-color: var(--accent-color);
   box-shadow: 0px 0px 4px 2px var(--accent-color);
   position: absolute;
-  top: 8px;
+  top: 7px;
   right: -19px;
 }
 
@@ -69,7 +71,6 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-block-start: 10px;
 }
 
 .header__theme-menu-button {
@@ -77,10 +78,11 @@
   border: none;
   color: var(--accent-color);
   text-align: center;
-  line-height: 1.5em;
+  line-height: 1em;
   text-transform: lowercase;
   padding-inline-start: 13px;
   padding-inline-end: 13px;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
@@ -90,20 +92,23 @@
 .header__theme-menu-button:focus {
   outline: none;
   border-bottom: 1px solid var(--accent-color);
-  margin-block-end: -1px;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid #FF007066;
+  outline: 1px solid var(--accent-color);
+  opacity: 0.4;
 }
 
 .header_title {
+  align-self: center;
+}
+
+.big-title-decor {
   font-weight: var(--font-weight-l);
   font-size: var(--header-title-size);
   color: var(--header-title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   line-height: 83%;
-  padding-block-start: 13px;
 }
 
 .title-decor {
@@ -113,8 +118,89 @@
 }
 
 .header_text {
-  block-size: fit-content;
   white-space: pre-line;
-  margin-block-start: 43px;
-  line-height: 1.3em;
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+  padding-inline: 10px;
+  margin-block-start: 40px;
+}
+
+.main__section {
+  display: grid;
+  gap: 20px;
+}
+
+.section__title {
+  color: var(--accent-color);
+  font-size: var(--main-font-size);
+}
+
+.section__article {
+  display: grid;
+  gap: 10px;
+}
+
+.article__title {
+  font-size: var(--main-font-size);
+}
+
+.article__text {
+  color: var(--text-color);
+  font-weight: var(--font-weight-m);
+}
+
+.article__container {
+  display: grid;
+  gap: 20px;
+}
+
+.article__title-weight-less {
+  font-weight: var(--font-weight-m);
+}
+
+.article__text__link {
+  text-decoration: none;
+  text-shadow: 1px 1px 0 var(--accent-color);
+  display: inline-block;
+}
+
+.article__text__link:focus {
+  outline: 1px solid var(--text-color);
+}
+
+.article__text__link:hover {
+  text-decoration: underline;
+}
+
+.gallery {
+  gap: 10px;
+}
+
+.section__gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.gallery__img {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+}
+
+.footer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  block-size: 100vh;
+  padding: 10px;
+  position: relative;
+  align-items: center;
+  margin-block-start: 40px;
+}
+
+.footer__title {
+  grid-row: 2 / 3;
+  justify-self: center;
 }

@@ -3,8 +3,9 @@
   и их переопределение под различные устройства
 */
 :root {
-  --header-bg-image: url(../images/cover-image.png);
   --main-bg-image: url(../images/cover-image-dark.png);
+  --second-bg-image: url(../images/cover-image.png);
+  --main-bg-color: #000028;
   --header-title-color: #DB00FF;
   --header-title-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --text-color: #F1B2CE;
@@ -14,5 +15,5 @@
   --font-weight-m: 400;
   --font-weight-l: 700;
   --main-font-size: 18px;
-  
+  --main-line-hight: 23.4px;
 }
