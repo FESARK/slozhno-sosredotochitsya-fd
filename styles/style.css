@@ -87,6 +87,7 @@
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--accent-color);
+  pointer-events: none
 }
 
 .header__theme-menu-button:focus {
@@ -175,7 +176,8 @@
 }
 
 .article__text__link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--text-color);
+  margin-bottom: -1px;
 }
 
 .gallery {
