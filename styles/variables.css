@@ -17,3 +17,9 @@
   --main-font-size: 18px;
   --main-line-hight: 23.4px;
 }
+
+@media (width >= 768px) {
+  .big-title-decor {
+    --header-title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
