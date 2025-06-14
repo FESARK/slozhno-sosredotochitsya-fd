@@ -14,6 +14,7 @@
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   block-size: 100vh;
+  min-block-size: 668px;
   padding: 10px;
   position: relative;
   align-items: center;
@@ -99,8 +100,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid var(--accent-color);
-  opacity: 0.4;
+  outline: 1px solid var(--accent-color-hover);
 }
 
 .header_title {
@@ -161,21 +161,21 @@
   font-weight: var(--font-weight-m);
 }
 
-.article__text__link {
+.article__text-link {
   text-decoration: none;
   text-shadow: 1px 1px 0 var(--accent-color);
   display: inline-block;
 }
 
-.article__text__link:focus {
+.article__text-link:focus {
   outline: none;
 }
 
-.article__text__link:focus-visible {
+.article__text-link:focus-visible {
   outline: 1px solid var(--text-color);
 }
 
-.article__text__link:hover {
+.article__text-link:hover {
   border-bottom: 1px solid var(--text-color);
   margin-bottom: -1px;
 }
@@ -199,6 +199,7 @@
   display: grid;
   place-items: center;
   block-size: 100vh;
+  min-block-size: 668px;
   padding: 10px;
   position: relative;
   place-content: center;
@@ -213,6 +214,7 @@
 @media (width >= 768px) {
   .header {
     padding: 20px;
+    min-block-size: 1024px;
   }
 
   .rec__icon {
@@ -246,11 +248,11 @@
     margin-block-start: 60px;
   }
 
-  .main__section:nth-child(odd):not(:last-child) {
+  .style-column {
     grid-template-columns: 1fr 2fr;
   }
 
-  .main__section:nth-child(even):not(:last-child) .section__title {
+  .style-row .section__title {
     max-inline-size: 30%;
   }
 
@@ -290,10 +292,15 @@
 
   .footer {
     margin-block-start: 60px;
+    min-block-size: 1024px;
   }
 }
 
 @media (width >= 1024px) {
+  .header {
+    min-block-size: 768px;
+  }
+
   .header__theme-menu {
     justify-self: center;
     align-self: start;
@@ -303,12 +310,15 @@
     flex-direction: row;
   }
 
-  .main__section:nth-child(odd):not(:last-child) {
+  .style-column {
     gap: 12px;
   }
 
-  .main__section:nth-child(even):not(:last-child) .article__container {
+  .style-row .article__container {
     grid-template-columns: repeat(3, 1fr);
     align-items: start;
+  }
+  .footer {
+    min-block-size: 768px;
   }
 }
